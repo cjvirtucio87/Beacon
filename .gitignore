@@ -1,1 +1,1 @@
-src/main/resources/config/*.properties
+src/main/resources/com/cjvirtucio/beacon/config/*.properties
