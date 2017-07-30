@@ -21,5 +21,5 @@ CREATE TRIGGER
     BEFORE INSERT ON crime
     FOR EACH ROW
 BEGIN
-    SET NEW.DistrictId = COALESCE(NEW.DistrictId, (SELECT d.DistrictName FROM district d WHERE d.DistrictName = NEW.DistrictName));
+    SET NEW.DistrictId = COALESCE(NEW.DistrictId, (SELECT d.Id FROM district d WHERE d.DistrictName = NEW.DistrictName));
 END$$

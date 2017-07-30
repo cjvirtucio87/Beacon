@@ -12,17 +12,31 @@
         <result property="weapon" column="Weapon"/>
         <result property="post" column="Post"/>
         <result property="districtName" column="DistrictName"/>
+        <result property="districtId" column="DistrictId"/>
         <result property="neighborhood" column="Neighborhood"/>
         <result property="coords" column="Location_1"/>
         <result property="crimeCaseNumber" column="crimeCaseNumber"/>
     </resultMap>
 
-    <select id='getCrimeById' parameterType='int' resultMap='CrimeResultMap'>
+    <select id='getCrimesByDistrictId' parameterType='int' resultMap='CrimeResultMap'>
         SELECT
             c.*
         FROM
-            crime c
+            crime c JOIN
+            district d ON
+            c.DistrictId = d.Id
         WHERE
-            c.Id = #{CrimeId}
+            c.DistrictId = #{DistrictId}
+    </select>
+
+    <select id='getCrimeCountForDistrict' parameterType='int' resultType='int'>
+        SELECT
+            count(*) as crime_count
+        FROM
+            crime c JOIN
+            district d ON
+            c.DistrictId = d.Id
+        WHERE
+            d.Id = #{DistrictId};
     </select>
 </mapper>

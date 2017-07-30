@@ -33,6 +33,9 @@ public class DataConfig {
     @Value("classpath:com/cjvirtucio/beacon/sql/district.sql")
     private Resource districtScript;
 
+    @Value("classpath:com/cjvirtucio/beacon/sql/district.seed.sql")
+    private Resource districtSeedScript;
+
     @Value("classpath:com/cjvirtucio/beacon/sql/crime.sql")
     private Resource crimeScript;
 
@@ -72,7 +75,12 @@ public class DataConfig {
     @Bean
     public DatabasePopulator databasePopulator() {
         final ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-        populator.addScripts(dropScript, districtScript, crimeScript, crimeSeedScript, hospitalScript, hospitalSeedScript);
+        populator.addScripts(
+                dropScript,
+                districtScript, districtSeedScript,
+                crimeScript, crimeSeedScript,
+                hospitalScript, hospitalSeedScript
+        );
         populator.setSeparator("$$");
         return populator;
     }

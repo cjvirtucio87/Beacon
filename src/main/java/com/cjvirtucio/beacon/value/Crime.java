@@ -14,6 +14,7 @@ public class Crime {
     private String weapon;
     private int post;
     private String districtName;
+    private int districtId;
     private String neighborhood;
     private String coords;
     private String crimeCaseNumber;
