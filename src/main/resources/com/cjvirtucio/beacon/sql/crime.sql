@@ -1,10 +1,10 @@
 CREATE TABLE crime (
    Id INT NOT NULL AUTO_INCREMENT
-  ,CrimeDate       DATE  NOT NULL
-  ,CrimeTime       VARCHAR(8) NOT NULL
-  ,CrimeCode       VARCHAR(4) NOT NULL
+  ,CrimeDate       DATE
+  ,CrimeTime       VARCHAR(8)
+  ,CrimeCode       VARCHAR(4)
   ,Location        VARCHAR(33)
-  ,Description     VARCHAR(20) NOT NULL
+  ,Description     VARCHAR(20)
   ,Weapon          VARCHAR(7)
   ,Post            INTEGER
   ,DistrictName        VARCHAR(12)

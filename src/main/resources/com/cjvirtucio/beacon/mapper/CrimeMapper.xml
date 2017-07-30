@@ -12,11 +12,52 @@
         <result property="weapon" column="Weapon"/>
         <result property="post" column="Post"/>
         <result property="districtName" column="DistrictName"/>
-        <result property="districtId" column="DistrictId"/>
         <result property="neighborhood" column="Neighborhood"/>
         <result property="coords" column="Location_1"/>
         <result property="crimeCaseNumber" column="crimeCaseNumber"/>
     </resultMap>
+
+    <select id='getCrimeById' parameterType='int' resultMap='CrimeResultMap'>
+        SELECT
+            c.*
+        FROM
+            crime c
+        WHERE
+            c.Id = #{CrimeId}
+    </select>
+
+    <insert
+            id='createCrime'
+            parameterType='com.cjvirtucio.beacon.value.Crime'
+            useGeneratedKeys="true"
+            keyProperty="Crime.id"
+            keyColumn="id">
+        INSERT INTO crime (
+            crimeDate,
+            crimeTime,
+            crimeCode,
+            location,
+            description,
+            weapon,
+            post,
+            districtName,
+            neighborhood,
+            location_1,
+            crimeCaseNumber
+        ) values (
+            #{Crime.crimeDate},
+            #{Crime.crimeTime},
+            #{Crime.crimeCode},
+            #{Crime.location},
+            #{Crime.description},
+            #{Crime.weapon},
+            #{Crime.post},
+            #{Crime.districtName},
+            #{Crime.neighborhood},
+            #{Crime.coords},
+            #{Crime.crimeCaseNumber}
+        )
+    </insert>
 
     <select id='getCrimesByDistrictId' parameterType='int' resultMap='CrimeResultMap'>
         SELECT
