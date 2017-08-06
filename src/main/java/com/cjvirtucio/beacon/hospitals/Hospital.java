@@ -1,4 +1,4 @@
-package com.cjvirtucio.beacon.value;
+package com.cjvirtucio.beacon.hospitals;
 
 import lombok.Data;
 

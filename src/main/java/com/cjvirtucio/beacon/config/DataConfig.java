@@ -21,7 +21,7 @@ import java.util.Properties;
 
 
 @Configuration
-@MapperScan("com.cjvirtucio.beacon.mapper")
+@MapperScan("com.cjvirtucio.beacon")
 public class DataConfig {
 
     @Value("${env}")

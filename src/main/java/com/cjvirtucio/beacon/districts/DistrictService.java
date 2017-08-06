@@ -1,11 +1,9 @@
-package com.cjvirtucio.beacon.service;
+package com.cjvirtucio.beacon.districts;
 
-import com.cjvirtucio.beacon.mapper.CrimeMapper;
-import com.cjvirtucio.beacon.mapper.HospitalMapper;
-import com.cjvirtucio.beacon.value.Crime;
-import com.cjvirtucio.beacon.value.DistrictData;
-import com.cjvirtucio.beacon.value.Hospital;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.cjvirtucio.beacon.crimes.CrimeMapper;
+import com.cjvirtucio.beacon.hospitals.HospitalMapper;
+import com.cjvirtucio.beacon.crimes.Crime;
+import com.cjvirtucio.beacon.hospitals.Hospital;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,11 +11,14 @@ import java.util.List;
 @Service
 public class DistrictService {
 
-    @Autowired
-    private CrimeMapper crimeMapper;
+    private final CrimeMapper crimeMapper;
 
-    @Autowired
-    private HospitalMapper hospitalMapper;
+    private final HospitalMapper hospitalMapper;
+
+    public DistrictService (CrimeMapper crimeMapper, HospitalMapper hospitalMapper) {
+        this.crimeMapper = crimeMapper;
+        this.hospitalMapper = hospitalMapper;
+    }
 
     public List<Crime> getCrimesByDistrictId(int id) {
         return crimeMapper.getCrimesByDistrictId(id);

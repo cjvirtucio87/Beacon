@@ -1,6 +1,5 @@
-package com.cjvirtucio.beacon.mapper;
+package com.cjvirtucio.beacon.hospitals;
 
-import com.cjvirtucio.beacon.value.Hospital;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

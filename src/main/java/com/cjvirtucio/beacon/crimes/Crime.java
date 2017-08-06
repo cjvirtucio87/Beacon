@@ -1,4 +1,4 @@
-package com.cjvirtucio.beacon.value;
+package com.cjvirtucio.beacon.crimes;
 
 import lombok.Data;
 import org.joda.time.DateTime;

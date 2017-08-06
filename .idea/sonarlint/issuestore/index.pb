@@ -22,3 +22,5 @@ v
 Fsrc/main/java/com/cjvirtucio/beacon/controller/DistrictController.java,c/3/c3413ec858ec3772b1d005d19d2f3274d6d435ad
 p
 @src/main/java/com/cjvirtucio/beacon/service/DistrictService.java,0/b/0b43849f99ec5fa79962217a5afd5a596a50a04e
+s
+Csrc/main/java/com/cjvirtucio/beacon/controller/CrimeController.java,4/7/47f1c94cc02a86ec48dbe3bc4f96afe8f66238a2

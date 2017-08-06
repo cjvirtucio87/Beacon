@@ -1,17 +1,16 @@
-package com.cjvirtucio.beacon.controller;
+package com.cjvirtucio.beacon.crimes;
 
-import com.cjvirtucio.beacon.service.CrimeService;
-import com.cjvirtucio.beacon.value.Crime;
-import com.cjvirtucio.beacon.value.DistrictData;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("crimes")
 public class CrimeController {
 
-    @Autowired
-    private CrimeService crimeService;
+    private final CrimeService crimeService;
+
+    public CrimeController(CrimeService crimeService) {
+        this.crimeService = crimeService;
+    }
 
     @GetMapping("/{id}")
     public Crime getCrimeById(@PathVariable int id) {

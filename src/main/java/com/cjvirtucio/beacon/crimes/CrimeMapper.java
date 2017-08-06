@@ -1,6 +1,5 @@
-package com.cjvirtucio.beacon.mapper;
+package com.cjvirtucio.beacon.crimes;
 
-import com.cjvirtucio.beacon.value.Crime;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

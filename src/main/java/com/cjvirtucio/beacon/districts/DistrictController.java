@@ -1,10 +1,7 @@
-package com.cjvirtucio.beacon.controller;
+package com.cjvirtucio.beacon.districts;
 
-import com.cjvirtucio.beacon.service.DistrictService;
-import com.cjvirtucio.beacon.value.Crime;
-import com.cjvirtucio.beacon.value.DistrictData;
-import com.cjvirtucio.beacon.value.Hospital;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.cjvirtucio.beacon.crimes.Crime;
+import com.cjvirtucio.beacon.hospitals.Hospital;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +13,11 @@ import java.util.List;
 @RequestMapping("districts")
 public class DistrictController {
 
-    @Autowired
-    private DistrictService districtService;
+    private final DistrictService districtService;
+
+    public DistrictController (DistrictService districtService) {
+        this.districtService = districtService;
+    }
 
     @GetMapping("/{id}")
     public DistrictData getDistrictData(@PathVariable int id) {
